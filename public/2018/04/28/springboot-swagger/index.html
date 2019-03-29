@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="springboot-swagger"/>
+
+
+
+
+  <meta name="keywords" content="springboot,swagger," />
+
+
+
+
+
+  <link rel="alternate" href="/default" title="柏八万的个人博客">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/04/28/springboot-swagger/"/>
+
+
+<meta name="description" content="接口管理的强大工具。demo地址在文章最后 项目现在前后端分离，需要一个API的管理工具，在分析了如下几个最终选择了，swagger。比较主流的方式。">
+<meta name="keywords" content="springboot,swagger">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot-swagger">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/springboot-swagger/index.html">
+<meta property="og:site_name" content="柏八万的个人博客">
+<meta property="og:description" content="接口管理的强大工具。demo地址在文章最后 项目现在前后端分离，需要一个API的管理工具，在分析了如下几个最终选择了，swagger。比较主流的方式。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://og3rfccos.bkt.clouddn.com/swagger.png">
+<meta property="og:updated_time" content="2019-03-25T07:04:44.212Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="springboot-swagger">
+<meta name="twitter:description" content="接口管理的强大工具。demo地址在文章最后 项目现在前后端分离，需要一个API的管理工具，在分析了如下几个最终选择了，swagger。比较主流的方式。">
+<meta name="twitter:image" content="http://og3rfccos.bkt.clouddn.com/swagger.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> springboot-swagger - 柏八万的个人博客 </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">柏八万的个人博客</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          springboot-swagger
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 28 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>接口管理的强大工具。demo地址在文章最后</p>
+<p>项目现在前后端分离，需要一个API的管理工具，在分析了如下几个最终选择了，swagger。比较主流的方式。<br><a id="more"></a></p>
+<h4 id="API管理"><a href="#API管理" class="headerlink" title="API管理"></a>API管理</h4><ul>
+<li><a href="https://swagger.io/" target="_blank" rel="external">swagger</a></li>
+<li><a href="https://github.com/thx/RAP" target="_blank" rel="external">RAP</a> 阿里出品，以开发为核心对接口维护</li>
+<li>POSTMAN </li>
+<li><a href="https://github.com/sx1989827/DOClever" target="_blank" rel="external">DOClever</a> 可视化接口管理工具，分析接口，校验接口，采用了JavaScript</li>
+</ul>
+<h4 id="十分钟搭建以springboot为项目的API管理"><a href="#十分钟搭建以springboot为项目的API管理" class="headerlink" title="十分钟搭建以springboot为项目的API管理"></a>十分钟搭建以springboot为项目的API管理</h4><blockquote>
+<p>demo为第二种方式，也是官方推荐</p>
+</blockquote>
+<h5 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h5><blockquote>
+<p>添加maven包</p>
+<h6 id="第一种方式："><a href="#第一种方式：" class="headerlink" title="第一种方式："></a>第一种方式：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- https://mvnrepository.com/artifact/com.mangofactory/swagger-springmvc --&gt;</div><div class="line">&lt;dependency&gt;</div><div class="line">    &lt;groupId&gt;com.mangofactory&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;swagger-springmvc&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0.2&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h6 id="第二种方式"><a href="#第二种方式" class="headerlink" title="第二种方式"></a>第二种方式</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> &lt;dependency&gt;</div><div class="line">    &lt;groupId&gt;io.springfox&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;2.6.1&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div><div class="line"></div><div class="line">&lt;dependency&gt;</div><div class="line">    &lt;groupId&gt;io.springfox&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;2.6.1&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>官方建议是swagger2</p>
+</blockquote>
+<h4 id="第二步骤"><a href="#第二步骤" class="headerlink" title="第二步骤"></a>第二步骤</h4><blockquote>
+<p>添加Configuration配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">package com.swagger.config;</div><div class="line"></div><div class="line">import org.springframework.context.annotation.Bean;</div><div class="line">import org.springframework.context.annotation.Configuration;</div><div class="line">import springfox.documentation.builders.ApiInfoBuilder;</div><div class="line">import springfox.documentation.builders.PathSelectors;</div><div class="line">import springfox.documentation.builders.RequestHandlerSelectors;</div><div class="line">import springfox.documentation.service.ApiInfo;</div><div class="line">import springfox.documentation.spi.DocumentationType;</div><div class="line">import springfox.documentation.spring.web.plugins.Docket;</div><div class="line"></div><div class="line">@Configuration</div><div class="line">public class SwaggerConfig &#123;</div><div class="line"></div><div class="line">    @Bean</div><div class="line">    public Docket swaggerSpringMvcPlugin()&#123;</div><div class="line">        return new Docket(DocumentationType.SWAGGER_2)</div><div class="line">                .apiInfo(apiInfo())</div><div class="line">                .select()</div><div class="line">                .apis(RequestHandlerSelectors.any())</div><div class="line">                .paths(PathSelectors.any())</div><div class="line">                .build();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private ApiInfo apiInfo()&#123;</div><div class="line">        return new ApiInfoBuilder()</div><div class="line">                .title(&quot;springboot利用swagger构建api文档&quot;)</div><div class="line">                .description(&quot;简单优雅的restfun风格&quot;)</div><div class="line">                .version(&quot;1.0&quot;)</div><div class="line">                .build();</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h4><p>启动springboot项目，访问:localhost:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:9999/swagger-ui.html</div></pre></td></tr></table></figure>
+<p><img src="http://og3rfccos.bkt.clouddn.com/swagger.png" alt="swagger"></p>
+<p><a href="https://github.com/whiney/springboot-swagger" target="_blank" rel="external">springboot-swagger</a></p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/springboot/">springboot</a>
+		  
+			<a href="/tags/swagger/">swagger</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/11/13/icon-font/">
+        <span class="next-text nav-default">浅谈雪碧图和字体图标</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2019
+    <span class="footer-author">柏八万.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="http://www.beian.gov.cn/"> 京ICP备37010202001628号</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

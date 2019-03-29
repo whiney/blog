@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="浅谈雪碧图和字体图标"/>
+
+
+
+
+  <meta name="keywords" content="前端,随笔," />
+
+
+
+
+
+  <link rel="alternate" href="/default" title="柏八万的个人博客">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/13/icon-font/"/>
+
+
+<meta name="description" content="这一次开发，没有什么特别的，就是我在小图标展示的时候。在雪碧图和图标字体中徘徊了很久。于是，简单研究了一下，就当立一个flag,日后在深究一下。">
+<meta name="keywords" content="前端,随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈雪碧图和字体图标">
+<meta property="og:url" content="http://yoursite.com/2017/11/13/icon-font/index.html">
+<meta property="og:site_name" content="柏八万的个人博客">
+<meta property="og:description" content="这一次开发，没有什么特别的，就是我在小图标展示的时候。在雪碧图和图标字体中徘徊了很久。于是，简单研究了一下，就当立一个flag,日后在深究一下。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://og3rfccos.bkt.clouddn.com/1510541347700.jpg">
+<meta property="og:image" content="http://og3rfccos.bkt.clouddn.com/1510542402120.jpg">
+<meta property="og:updated_time" content="2019-03-25T07:04:16.135Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈雪碧图和字体图标">
+<meta name="twitter:description" content="这一次开发，没有什么特别的，就是我在小图标展示的时候。在雪碧图和图标字体中徘徊了很久。于是，简单研究了一下，就当立一个flag,日后在深究一下。">
+<meta name="twitter:image" content="http://og3rfccos.bkt.clouddn.com/1510541347700.jpg">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 浅谈雪碧图和字体图标 - 柏八万的个人博客 </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">柏八万的个人博客</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          浅谈雪碧图和字体图标
+        
+      </h1>
+
+      <time class="post-time">
+          Nov 13 2017
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>这一次开发，没有什么特别的，就是我在小图标展示的时候。在雪碧图和图标字体中徘徊了很久。于是，简单研究了一下，就当立一个flag,日后在深究一下。</p>
+<a id="more"></a>
+<h4 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h4><blockquote>
+<p>现在是前端技术的大时代。若干年过去之后，也许我们会感慨很多，当年阿当的一篇博文多么的犀利。vue和angular的闹剧。最近临危受命，要做几天的前端开发。说是前端开发，其实就是写<code>html+css+JavaScript</code>,真的，当你面对庞大的前端技术体系无所适从的时候,用最简单的技术来一场放松吧。</p>
+</blockquote>
+<h4 id="雪碧图"><a href="#雪碧图" class="headerlink" title="雪碧图"></a>雪碧图</h4><blockquote>
+<p>除了叫雪碧图外，它还有很多名字，css sprite, css 精灵等。原理就是将一些小图标合并到一张图片上，然后用css的背景定位来显示需要显示的部分。</p>
+</blockquote>
+<p><strong>工具</strong>：</p>
+<p><a href="https://www.toptal.com/developers/css/sprite-generator" target="_blank" rel="external">sprite-generator</a></p>
+<p><strong>栗子</strong>:</p>
+<p><em>图片</em><br><img src="http://og3rfccos.bkt.clouddn.com/1510541347700.jpg" alt="image"></p>
+<p><em>定位</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;css sprite&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        .bg&#123;</div><div class="line">            background: url(&quot;css_sprites .png&quot;);</div><div class="line">        &#125;</div><div class="line">        .bg-9 &#123;</div><div class="line">            width: 262px; height: 156px;</div><div class="line">            background-position: -10px -10px;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        .bg-10 &#123;</div><div class="line">            width: 246px; height: 150px;</div><div class="line">            background-position: -292px -10px;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class=&quot;bg bg-9&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;bg bg-10&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><em>效果</em><br><img src="http://og3rfccos.bkt.clouddn.com/1510542402120.jpg" alt="image"></p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>减少对服务器的请求次数<code>比如页面有五个图标，把他们放到一张背景图上，只需要加载一次。然后用css定位从这张图片来取就可以了</code></li>
+<li>提高页面的加载速度<code>减少了页面的请求次数，自然会提高了页面的加载速度</code></li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>维护麻烦，如果修改其中的一张图，你需要修改整张图。</li>
+<li>高清失真，为了适应不同的分辨率，可能要准备多个规格的图片。</li>
+</ul>
+<h2 id="图标字体"><a href="#图标字体" class="headerlink" title="图标字体"></a>图标字体</h2><blockquote>
+<p>可以缩放的矢量图标。你可以使用CSS对它们进行修改:大小，颜色，阴影等。体积特别的小。可能几百个图标才几十KB。</p>
+</blockquote>
+<p><strong>工具</strong>：</p>
+<p><a href="http://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2" target="_blank" rel="external">iconfont</a>是阿里提供一个矢量图标库。</p>
+<p><a href="http://fontawesome.dashgame.com/" target="_blank" rel="external">fontawesome</a> 国外一款优秀的图标库，用bootstrap的都不陌生了。</p>
+<p><strong>栗子</strong>:</p>
+<p><a href="http://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2" target="_blank" rel="external">iconfont</a>和<a href="http://fontawesome.dashgame.com/" target="_blank" rel="external">fontawesome</a>官方都提供了很详细的使用教程，这里不就不做赘述了。<br>简单的写了一个小<a href="https://github.com/whiney/icon-font" target="_blank" rel="external">demo</a>。可以去简单的看一下。</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>高清保真，因为是SVG图形。</li>
+<li>灵活性，可以设置大小，颜色等。</li>
+<li><a href="https://caniuse.com/#feat=fontface" target="_blank" rel="external">兼容性</a>好，支持IE6</li>
+<li>开源的字体库很多</li>
+<li>减少HTTP请求</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>维护自己的字体库麻烦一些</li>
+<li>图表字体只能被渲染为单色的</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><blockquote>
+<p>这篇文章只是浅谈了一些雪碧图和图标字体，没有太过的深入，也算是一篇工具介绍吧。这两种方式的出现，都是为了减少HTTP请求次数。优化和提升网页的访问速度。各有千秋。如果实际开发中，可以两种方式结合着来。</p>
+</blockquote>
+<p><a href="https://github.com/whiney/icon-font" target="_blank" rel="external">小栗子</a></p>
+<p><a href="https://www.toptal.com/developers/css/sprite-generator" target="_blank" rel="external">sprite-generator</a></p>
+<p><a href="http://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2" target="_blank" rel="external">iconfont</a></p>
+<p><a href="http://fontawesome.dashgame.com/" target="_blank" rel="external">fontawesome</a></p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/前端/">前端</a>
+		  
+			<a href="/tags/随笔/">随笔</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/04/28/springboot-swagger/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">springboot-swagger</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/09/程序员当产品经理是一种什么样的体验/">
+        <span class="next-text nav-default">程序员当产品经理是一种什么样的体验</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2019
+    <span class="footer-author">柏八万.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="http://www.beian.gov.cn/"> 京ICP备37010202001628号</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
